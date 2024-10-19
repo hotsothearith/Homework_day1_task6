@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Caching Example</title>
+</head>
+<body>
+
+    <h1>Welcome to My Offline Webpage</h1>
+    <p>This webpage demonstrates how to use a service worker to cache content for offline access. You can view this content even without an internet connection!</p>
+
+    <script>
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('service-worker-gpt.js')
+                .then(function(registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('Service Worker registration failed:', error);
+                });
+            });
+        }
+
+    </script>
+
+</body>
+</html>
